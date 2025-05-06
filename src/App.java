@@ -20,5 +20,17 @@ public class App {
             System.exit(1);
         }
         System.out.println("ServerSocket is created " + server);
+
+        while (true) {
+            try {
+                
+            } catch (Exception e) {
+                System.out.println("Waiting for connect request...");
+                client = server.accept();
+
+                System.out.println("Connect request accepted...");
+                String clientHost = client.getInetAddress().getHostAddress();
+            }
+        }
     }
 }

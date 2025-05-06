@@ -35,6 +35,8 @@ public class App {
 
                 InputStream clientIn = client.getInputStream();
                 BufferedReader br = new BufferedReader(new InputStreamReader(clientIn));
+                String msgFromClient = br.readLine();
+                System.out.println("Message recived from client = " + msgFromClient);
             }
         }
     }

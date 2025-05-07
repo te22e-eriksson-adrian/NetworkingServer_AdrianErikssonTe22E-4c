@@ -8,7 +8,7 @@ public class App {
         ServerSocket server = null;
         Socket client;
 
-        int portnumber = 21;
+        int portnumber = 65000;
         if (args.length >= 1) {
             portnumber = Integer.parseInt(args[0]);
         }

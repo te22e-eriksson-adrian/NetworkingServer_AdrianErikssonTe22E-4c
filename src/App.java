@@ -23,8 +23,6 @@ public class App {
 
         while (true) {
             try {
-                
-            } catch (Exception e) {
                 System.out.println("Waiting for connect request...");
                 client = server.accept();
 
@@ -44,6 +42,14 @@ public class App {
                     String ansMsg = "Hello, " + msgFromClient;
                     pw.println(ansMsg);
                 }
+
+                if (msgFromClient != null && msgFromClient.equalsIgnoreCase("bye")) {
+                    server.close();
+                    client.close();
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println("Communication failed! Please address the issiue and restart. Failcode: " + e);
             }
         }
     }

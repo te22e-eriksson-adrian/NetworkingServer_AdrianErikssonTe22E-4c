@@ -37,6 +37,13 @@ public class App {
                 BufferedReader br = new BufferedReader(new InputStreamReader(clientIn));
                 String msgFromClient = br.readLine();
                 System.out.println("Message recived from client = " + msgFromClient);
+
+                if (msgFromClient != null && !msgFromClient.equalsIgnoreCase("bye")) {
+                    OutputStream clientOut = client.getOutputStream();
+                    PrintWriter pw = new PrintWriter(clientOut, true);
+                    String ansMsg = "Hello, " + msgFromClient;
+                    pw.println(ansMsg);
+                }
             }
         }
     }
